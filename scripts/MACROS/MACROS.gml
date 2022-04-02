@@ -18,7 +18,8 @@
 #macro RUN 0
 
 
-
+//Inventory Returns
+#macro FULLINVENTORY 0
 
 
 //Dices

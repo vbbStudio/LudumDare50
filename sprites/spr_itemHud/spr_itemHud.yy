@@ -8,14 +8,14 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 0,
-  "bbox_right": 639,
+  "bbox_right": 454,
   "bbox_top": 0,
-  "bbox_bottom": 479,
+  "bbox_bottom": 64,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 640,
-  "height": 480,
+  "width": 455,
+  "height": 65,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"a7cad70a-4e3b-4f63-967e-3ed0bfb9bc15","path":"sprites/spr_battleHud/spr_battleHud.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"a7cad70a-4e3b-4f63-967e-3ed0bfb9bc15","path":"sprites/spr_battleHud/spr_battleHud.yy",},"LayerId":{"name":"cd94898e-3ad3-436c-a81d-e0ff635f60a9","path":"sprites/spr_battleHud/spr_battleHud.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_battleHud","path":"sprites/spr_battleHud/spr_battleHud.yy",},"resourceVersion":"1.0","name":"a7cad70a-4e3b-4f63-967e-3ed0bfb9bc15","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"b2992374-d66a-49e9-98e6-8c7acf338356","path":"sprites/spr_itemHud/spr_itemHud.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"b2992374-d66a-49e9-98e6-8c7acf338356","path":"sprites/spr_itemHud/spr_itemHud.yy",},"LayerId":{"name":"c60826b6-5f23-43ba-84a3-8c8cff713411","path":"sprites/spr_itemHud/spr_itemHud.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_itemHud","path":"sprites/spr_itemHud/spr_itemHud.yy",},"resourceVersion":"1.0","name":"b2992374-d66a-49e9-98e6-8c7acf338356","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_battleHud","path":"sprites/spr_battleHud/spr_battleHud.yy",},
+    "spriteId": {"name":"spr_itemHud","path":"sprites/spr_itemHud/spr_itemHud.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"14375e58-dd4a-4e13-9255-dfbc4dc0937e","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a7cad70a-4e3b-4f63-967e-3ed0bfb9bc15","path":"sprites/spr_battleHud/spr_battleHud.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"d6b6925b-843d-4c9f-ac25-5a89f5059a7c","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b2992374-d66a-49e9-98e6-8c7acf338356","path":"sprites/spr_itemHud/spr_itemHud.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -58,14 +58,14 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_battleHud","path":"sprites/spr_battleHud/spr_battleHud.yy",},
+    "parent": {"name":"spr_itemHud","path":"sprites/spr_itemHud/spr_itemHud.yy",},
     "resourceVersion": "1.3",
-    "name": "spr_battleHud",
+    "name": "spr_itemHud",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"cd94898e-3ad3-436c-a81d-e0ff635f60a9","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"c60826b6-5f23-43ba-84a3-8c8cff713411","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
@@ -73,7 +73,7 @@
     "path": "folders/Sprites/HUD.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_battleHud",
+  "name": "spr_itemHud",
   "tags": [],
   "resourceType": "GMSprite",
 }

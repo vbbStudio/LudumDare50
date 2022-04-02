@@ -17,9 +17,12 @@ currentLife = 10;
 
 Level = 0;
 
-currentXp = 0;
-
 Coins = 0;
+
+////Item Position/Quantity = Item Id;
+Inventory = array_create(0,noone);
+
+
 
 //Equipament Attributes
 Damage = 5;

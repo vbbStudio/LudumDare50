@@ -1,19 +1,36 @@
 /// @description Functions and variables of a battle
 // You can write your code in this editor
 randomize();
+scr_input();
 turn = PLAYERTURN;
 playerOption = -1; //Placeholder
 getMenuInput = true;
+drawInfos = true;
+drawCombatLog = true;
+enemyTurnCount = 0;
+playerTurnCount = 0;
+
+combatLog[0] = "Test 0";
+combatLog[1] = "Test 1";
+combatLog[2] = "Test 2";
+combatLog[3] = "Test 3";
+combatLog[4] = "Test 4";
+combatLog[5] = "Test 5";
+combatLog[6] = "Test 6";
+
 function Battle(enemy) {
+	drawInfos = true;
 	if (turn == PLAYERTURN) {
 		switch(playerTurn()) {
 			case MISS:
 				turn = ENEMYTURN;
 				show_message("Player Miss, Turn Over");
+				playerTurnCount++;
 			break;
 			case TURNOVER:
 				turn = ENEMYTURN;
 				show_message("Player Turn Over");
+				playerTurnCount++;
 			break;
 			case COMBATOVER:
 				show_message("Battle ends,Player Win");
@@ -25,11 +42,13 @@ function Battle(enemy) {
 				turn = PLAYERTURN;
 				getMenuInput = true;
 				show_message("Enemy Miss, Turn Over");
+				enemyTurnCount++;
 			break;
 			case TURNOVER:
 				turn = PLAYERTURN;
 				getMenuInput = true;
 				show_message("Enemy Turn Over");
+				enemyTurnCount++;
 			break;
 			case COMBATOVER:
 				show_message("Battle ends,Enemy Win");
@@ -54,6 +73,7 @@ function enemyTurn() {
 			return	battleAttack(turn);
 		break;
 		case DEFEND:
+		return battleDefence(turn);
 		break;
 	}
 }
@@ -84,6 +104,21 @@ function battleAttack(turn) {
 	
 }
 
+function battleInventory() {
+	var invSize = array_length(obj_Player.Inventory);
+	var drawItemHudX = 32;
+	var drawItemHudY = 384;
+	if (invSize > 0) {
+		if (!instance_exists(obj_itemMenu)) {
+			itemMenu = instance_create_layer(drawItemHudX,drawItemHudY,"Instances",obj_itemMenu);
+			itemMenu.mySize = invSize-1;
+		}
+	} else {
+		show_message("No items to use");
+		playerOption = -1; //Placeholder
+		getMenuInput = true;
+	}
+}
 
 function battleRun() {
 	var diceResultPlayer = rollxdX(2,D6) + obj_Player.Level;
@@ -118,6 +153,7 @@ function battleOption(option) {
 		return battleDefence(turn);
 		break;
 		case ITEM:
+		return battleInventory();
 		break;
 		case RUN:
 		return battleRun();

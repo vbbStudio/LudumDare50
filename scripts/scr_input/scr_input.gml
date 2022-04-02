@@ -5,5 +5,6 @@ function scr_input(){
 	left =  keyboard_check_pressed(vk_left);
 	up = keyboard_check_pressed(vk_up);
 	down = keyboard_check_pressed(vk_down);
-	enter = keyboard_check_pressed(vk_enter);			
+	enter = keyboard_check_pressed(vk_enter);		
+	escape = keyboard_check_pressed(vk_escape);
 }
