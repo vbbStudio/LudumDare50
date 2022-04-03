@@ -16,3 +16,6 @@ if (obj_gameControl.inCombat == true) {
 		obj_gameControl.inCombat = false;
 }
 }
+if (obj_Player.currentLife <=0) {
+	room_goto(rm_gameOver);
+}

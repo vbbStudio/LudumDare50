@@ -49,4 +49,13 @@
 #macro D10 10
 #macro D12 12
 #macro D20 20
-
+//Shop Macros
+#macro WEAPON 0
+#macro ARMOR 1
+#macro EXITSHOP 2
+//Inn Macros
+#macro SLEEP 0
+#macro LVLUPHP 1
+#macro LVLUPATK 2
+#macro LVLUPDEF 3
+#macro INNEXIT 4

@@ -20,12 +20,12 @@
 		draw_set_color(c_white);
 		
 		if (global.gameTimeHour == 00) {
-			draw_text(500,300,"     ??"+":"+"??"+"\n"+"Final Day.");
+			draw_text(510,300,"     ??"+":"+"??"+"\n"+"Final Day.");
 		} else {
 			if (global.gameTimeMinutes < 10) {
-				draw_text(500,300,"     "+string(global.gameTimeHour)+":0"+string(global.gameTimeMinutes)+"\n"+"hours left...");
+				draw_text(510,300,"     "+string(global.gameTimeHour)+":0"+string(global.gameTimeMinutes)+"\n"+"hours left...");
 			} else {
-				draw_text(500,300,"     "+string(global.gameTimeHour)+":"+string(global.gameTimeMinutes)+"\n"+"hours left...");
+				draw_text(510,300,"     "+string(global.gameTimeHour)+":"+string(global.gameTimeMinutes)+"\n"+"hours left...");
 			}	
 		}
 		

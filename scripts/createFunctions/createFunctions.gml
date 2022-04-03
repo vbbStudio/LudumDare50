@@ -51,3 +51,42 @@ function generateMonsters(howFar,playerLevel) {
 function combatStatus(level) {
 		return irandom_range(1+level,3+level);
 }
+
+function createEquipament(level) {
+	return 	irandom_range(1+level,3+level)+level;
+}
+function createWeapon(level) {
+	return 	irandom_range(2+level,3+level)+level;
+}
+
+function weaponPrice(level) {
+	return (level+weapon)*irandom_range(50,75);	
+}
+
+function armorPrice(level) {
+	return (level+armor)*irandom_range(80,150);	
+}
+
+
+function levelUpATK(level) {
+	obj_Player.baseAttack+=level+1;
+	obj_Player.Level = level+1;
+	obj_Player.currentAttack = obj_Player.baseAttack;
+	obj_Player.baseDamage+=1;
+	
+}
+
+function levelUpHP(level) {
+	obj_Player.baseLife+=level+1;
+	obj_Player.Level = level+1;
+	obj_Player.currentLife = obj_Player.baseLife;
+}
+
+function levelUpDEF(level) {
+	obj_Player.baseDefence+=level+1;
+	obj_Player.currentDefence = obj_Player.baseDefence;
+	obj_Player.updateArmor();
+	obj_Player.Level = level+1;
+}
+
+

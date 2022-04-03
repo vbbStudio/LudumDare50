@@ -29,8 +29,9 @@ function forestAmbient() {
 			}
 		break;
 		case LOOT:
+		audio_play_sound(getLoot,10,false);
 			var log = "Loot Find!";
-			itemLoot = obj_gameDatabase.potion;
+			itemLoot = choose(obj_gameDatabase.potion,obj_gameDatabase.ultraPotion,obj_gameDatabase.MegaPotion,obj_gameDatabase.ironSkin,obj_gameDatabase.guardianPotion,obj_gameDatabase.potionOfFury,obj_gameDatabase.potionOfHate);
 			array_push(global.eventLog,log);
 			getRandomLoot = true;
 			obj_gameDatabase.itemAddToInventory(itemLoot);
@@ -59,7 +60,7 @@ function solvingCombat() {
 			if (obj_Battle.combatOver == true) {
 				if (obj_Player.currentLife > 0 && obj_Battle.playerRun == -1 ){
 						if getCombatLoot == false {
-							coinsLoot = gettingCombatLoot(obj_Enemy.Level,obj_Enemy.Coins);
+							coinsLoot = gettingCombatLoot(obj_Enemy.Level,obj_Enemy.Coins)+((obj_Battle.playerTurnCount+obj_Battle.enemyTurnCount)*obj_Enemy.Level);
 							getCombatLoot = true;
 							var log = "Victory! "+string(coinsLoot)+" Coins won!";
 							array_push(global.eventLog,log);

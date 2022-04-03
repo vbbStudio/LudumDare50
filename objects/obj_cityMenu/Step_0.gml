@@ -16,8 +16,16 @@ if (enter) {
 			instance_destroy(self);
 		break;
 		case SHOP:
+			global.currentPlace = gamePlaces.shop;
+			var log = "Going shop...";
+			array_push(global.eventLog,log);
+			instance_destroy(self);
 		break;
 		case INN:
+			global.currentPlace = gamePlaces.inn;
+			var log = "Going to the Inn...";
+			array_push(global.eventLog,log);
+			instance_destroy(self);
 		break;
 		case PORTAL:
 			if (angelPortal <2) {

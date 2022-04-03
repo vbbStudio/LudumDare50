@@ -4,7 +4,7 @@
 #region Player attributes
 
 //Basic Attributes
-name = "Dawn Warrior";
+name = "";
 
 baseAttack = 5;
 currentAttack = 5;
@@ -17,13 +17,22 @@ currentLife = 10;
 
 Level = 0;
 
-Coins = 0;
+Coins = 500;
+
+playerWeapon = 0;
+playerArmor = 0;
 
 ////Item Position/Quantity = Item Id;
 Inventory = array_create(0,noone);
-
+angelOfLifeHP = 10000;
 
 
 //Equipament Attributes
-Damage = 5;
+baseDamage = 2;
+Damage = 0;
 #endregion
+
+
+function updateArmor() {
+	currentDefence += playerArmor;	
+}

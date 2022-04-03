@@ -21,7 +21,6 @@ combatLog[4] = "";
 combatLog[5] = "";
 combatLog[6] = "";
 function Battle(enemy) {
-	
 	if (!instance_exists(obj_battleMenu)) {
 		instance_create_layer(96,320,"Instances",obj_battleMenu);
 			var log = "An enemy apears!";
@@ -113,6 +112,7 @@ function battleDamage(target,damage) {
 				target.currentLife -= damage;
 				var log = (string(target.name)+" recive "+string(damage)+" damage.");
 				array_push(combatLog,log);
+				audio_play_sound(getHurt,10,false);
 				return TURNOVER;
 		} else {
 			target.currentLife -= damage;
@@ -132,6 +132,7 @@ function battleAttack(turn) {
 		return battleDamage(defender,attacker.Damage);
 	} else {
 		var log = attacker.name + " Miss!";
+		audio_play_sound(miss,10,false);
 		array_push(combatLog,log);
 		return MISS;
 	}
@@ -143,7 +144,7 @@ function battleInventory() {
 	var drawItemHudX = 32;
 	var drawItemHudY = 384;
 	if (invSize > 0) {
-		if (!instance_exists(obj_itemMenu)) {
+		if (!instance_exists(obj_itemMenu) && obj_Enemy.currentLife > 0) {
 			itemMenu = instance_create_layer(drawItemHudX,drawItemHudY,"Instances",obj_itemMenu);
 			itemMenu.mySize = invSize-1;
 		}
@@ -157,8 +158,9 @@ function battleInventory() {
 
 function battleRun() {
 	var diceResultPlayer = rollxdX(2,D6) + obj_Player.Level;
-	var diceResultEnemy = rollxdX(2,D6) + obj_Enemy.Level;
-	
+	var diceResultEnemy = rollxdX(2,D6) + obj_Enemy.currentAttack;
+		var log = "Trying to run away...Run ="+string(diceResultPlayer)+" + LVL "+string(obj_Player.Level)+" VS "+string(diceResultEnemy)+"+"+string(obj_Enemy.currentAttack);
+		array_push(combatLog,log);
 	if (diceResultPlayer >= diceResultEnemy) {
 		var log = "You ran away and did not receive any loot";
 		array_push(combatLog,log);
@@ -181,6 +183,7 @@ function battleDefence(turn) {
 	defender.currentDefence+=diceResult;
 	var log = (string(defender.name)+" recive +"+string(diceResult)+" Defense until next turn. Current defense: "+string(defender.currentDefence));
 	array_push(combatLog,log);
+	audio_play_sound(defenseUp,10,false);
 	return TURNOVER;
 }
 	
@@ -202,7 +205,6 @@ function battleOption(option) {
 		return battleRun();
 		break;
 	}
-
 
 }
 	
