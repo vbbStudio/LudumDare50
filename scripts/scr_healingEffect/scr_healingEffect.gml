@@ -6,5 +6,6 @@ function scr_healingEffect(value = 5){
 	} else {
 		obj_Player.currentLife = obj_Player.baseLife;
 	}
-	show_message(string(value)+" healed, current life equals "+string(obj_Player.currentLife));
+	var log = (string(value)+" healed, current life equals "+string(obj_Player.currentLife));
+	array_push(obj_Battle.combatLog,log);
 }

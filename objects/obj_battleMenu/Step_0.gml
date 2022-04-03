@@ -22,7 +22,9 @@ if (instance_exists(obj_Battle)) {
 					obj_Battle.playerOption = 0;
 				break;
 			}
+			control = 0;
 			obj_Battle.getMenuInput = false;
-			
 		}
+} else {
+	instance_destroy(self);
 }

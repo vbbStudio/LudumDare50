@@ -4,22 +4,23 @@
 #region Enemy attributes
 
 //Basic Attributes
-name = "Clebler";
+name = "Plant Soldier";
 
-baseAttack = 2;
-currentAttack = 2;
+baseAttack = 0;
+currentAttack = baseAttack;
 
-baseDefence = irandom(10);
+baseDefence = 0;
 currentDefence = baseDefence;
 
-baseLife = 15;
-currentLife = 15;
+baseLife = 0;
+currentLife = baseLife;
 
-Damage = 5;
+Damage = 0;
 
 Coins = 0;
 
 Level = 0;
 
-enemyImage = spr_coguSoldier;
+enemyImage = "";
+enemySubImage = "";
 #endregion

@@ -5,7 +5,7 @@ mySize = 0;
 controller = 0;
 itemName = "";
 itemDesc = "";
-
+obj_Battle.drawCombatLog = false;
 function itemNav() {
 	controller = navegationInMenu(mySize,up,down,controller);
 	itemName = obj_Player.Inventory[controller].itemName;
@@ -14,6 +14,7 @@ function itemNav() {
 			obj_Battle.playerOption = -1; //Placeholder
 			obj_Battle.getMenuInput = true;	
 			instance_destroy();
+			obj_Battle.drawCombatLog = true;
 		}
 		if (enter) {
 			var effect = obj_Player.Inventory[controller].itemEffect;
@@ -21,6 +22,8 @@ function itemNav() {
 			array_delete(obj_Player.Inventory,controller,1);
 			obj_Battle.playerOption = -1; //Placeholder
 			obj_Battle.getMenuInput = true;	
+			obj_Battle.drawCombatLog = true;
+			keyboard_clear(vk_enter);
 			instance_destroy();
 		}
 	

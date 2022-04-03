@@ -22,6 +22,26 @@
 #macro FULLINVENTORY 0
 
 
+//City Locations
+#macro EXPLORE 0
+#macro SHOP 1
+#macro INN 2
+#macro PORTAL 3
+//Explore Locations
+#macro FLOREST 0
+#macro CAVE 1
+#macro RUINS 2
+#macro CITY 3
+
+//Exploarion Macros
+#macro COMBAT 0
+#macro LOOT 1
+#macro RESOLVINGCOMBAT 2
+#macro KEEPQUESTION 3
+
+//KEEPQUESTION
+#macro YES 0
+#macro NO 1
 //Dices
 #macro D4 4
 #macro D6 6
@@ -29,3 +49,4 @@
 #macro D10 10
 #macro D12 12
 #macro D20 20
+

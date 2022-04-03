@@ -4,7 +4,7 @@
 #region Player attributes
 
 //Basic Attributes
-name = "Mike";
+name = "Dawn Warrior";
 
 baseAttack = 5;
 currentAttack = 5;
